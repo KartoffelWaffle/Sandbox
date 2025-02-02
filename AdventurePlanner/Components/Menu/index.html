@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./menu.component.js" defer></script>
+    <title>Document</title>
+    <style>
+
+        body {
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: flex-start;
+            align-items: center;
+
+            box-sizing: border-box;
+
+            background-color: #e0e0e0;
+
+            margin: 0;
+
+            padding: 50px;
+
+        }
+
+        .menu-icon-order {
+
+            display: flex;
+            flex-direction: column;
+
+            height: 100%;
+
+            gap: 5px;
+
+        }
+
+        .menu-item {
+
+            width: 70px;
+            height: 70px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin: 0;
+
+            border: none;
+            background-color: inherit;
+
+            border-radius: 4px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: rgb(31,31,31);
+            }
+        
+            i {color: white;}
+
+            .menu-item:hover {
+                background-color: #333333;
+            }
+
+            .menu-item.active {
+                background-color: #38a10e;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+   <ap-menu>
+        <button slot="header" class="menu-item"><img style="width: 64px; height: 64px;" src="./icons/menu.svg"></img></button>
+        <div slot="main" class="menu-icon-order">
+            <button class="menu-item active"><img style="width: 64px; height: 64px;" src="./icons/house.svg"></img></button>
+            <button class="menu-item"><img style="width: 64px; height: 64px;" src="./icons/search.svg"></img></button>
+            <button class="menu-item"><img style="width: 64px; height: 64px;" src="./icons/mountain-range.svg"></img></button>
+            <button class="menu-item"><img style="width: 64px; height: 64px;" src="./icons/money.svg"></img></button>
+        </div>
+        <div slot="secondary-content">
+            <div style="display: block; width: 300px; height: 100px; background-color: orange;">
+            </div>
+        </div>
+        <button slot="footer" class="menu-item"><img style="width: 64px; height: 64px;" src="./icons/profile.svg"></img></button>
+    </ap-menu>
+
+    <div style="display: block; width: fit-content;"></div>
+</body>
